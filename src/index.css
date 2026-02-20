@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* SecureBank Brand: Deep Navy + Emerald */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Deep Navy Blue */
+    --primary: 222 70% 20%;
+    --primary-foreground: 210 40% 98%;
+    --primary-light: 222 60% 30%;
+    --primary-glow: 222 80% 40%;
+
+    /* Emerald Green */
+    --emerald: 152 69% 31%;
+    --emerald-light: 152 55% 42%;
+    --emerald-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 152 69% 31%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --success: 142 71% 35%;
+    --success-foreground: 0 0% 100%;
+    --success-bg: 142 60% 95%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-bg: 48 100% 93%;
+
+    --danger: 0 84% 60%;
+    --danger-foreground: 0 0% 100%;
+    --danger-bg: 0 86% 96%;
+
+    --critical: 0 72% 40%;
+    --critical-bg: 0 80% 94%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 222 70% 20%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar */
+    --sidebar-background: 222 50% 15%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 152 69% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 50% 22%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 222 40% 25%;
+    --sidebar-ring: 152 69% 45%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(222 70% 20%), hsl(222 60% 30%), hsl(152 69% 31%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    --gradient-emerald: linear-gradient(135deg, hsl(152 69% 31%), hsl(152 55% 42%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px hsl(222 70% 20% / 0.08), 0 1px 2px hsl(222 70% 20% / 0.04);
+    --shadow-md: 0 4px 12px hsl(222 70% 20% / 0.12), 0 2px 6px hsl(222 70% 20% / 0.06);
+    --shadow-lg: 0 10px 30px hsl(222 70% 20% / 0.15), 0 4px 12px hsl(222 70% 20% / 0.08);
+    --shadow-glow-emerald: 0 0 20px hsl(152 69% 31% / 0.35);
+    --shadow-glow-navy: 0 0 20px hsl(222 70% 20% / 0.35);
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 152 69% 45%;
+    --primary-foreground: 222 47% 7%;
+    --secondary: 222 40% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 40% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 152 69% 45%;
+    --accent-foreground: 222 47% 7%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 40% 20%;
+    --input: 222 40% 20%;
+    --ring: 152 69% 45%;
+    --sidebar-background: 222 50% 9%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 152 69% 45%;
+    --sidebar-primary-foreground: 222 47% 7%;
+    --sidebar-accent: 222 50% 15%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 222 40% 15%;
+    --sidebar-ring: 152 69% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  .gradient-emerald {
+    background: var(--gradient-emerald);
+  }
+  .shadow-glow-emerald {
+    box-shadow: var(--shadow-glow-emerald);
+  }
+  .shadow-glow-navy {
+    box-shadow: var(--shadow-glow-navy);
+  }
+  .text-emerald {
+    color: hsl(var(--emerald));
+  }
+  .bg-emerald {
+    background-color: hsl(var(--emerald));
+  }
+  .border-emerald {
+    border-color: hsl(var(--emerald));
+  }
+  .bg-success-bg {
+    background-color: hsl(var(--success-bg));
+  }
+  .bg-warning-bg {
+    background-color: hsl(var(--warning-bg));
+  }
+  .bg-danger-bg {
+    background-color: hsl(var(--danger-bg));
+  }
+  .text-success {
+    color: hsl(var(--success));
+  }
+  .text-warning {
+    color: hsl(var(--warning));
+  }
+  .text-danger {
+    color: hsl(var(--danger));
+  }
+  .bg-success {
+    background-color: hsl(var(--success));
+  }
+  .bg-warning {
+    background-color: hsl(var(--warning));
+  }
+  .bg-danger {
+    background-color: hsl(var(--danger));
+  }
+}
+
+/* Waveform animation */
+@keyframes waveform {
+  0%, 100% { height: 4px; }
+  50% { height: 100%; }
+}
+
+/* Pulse ring animation */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Scan line animation */
+@keyframes scan-line {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+/* Face landmark dots */
+@keyframes landmark-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes score-fill {
+  from { stroke-dashoffset: 283; }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-float-up {
+  animation: float-up 0.5s ease-out forwards;
+}
+
+.bar-animate {
+  animation: waveform 0.8s ease-in-out infinite;
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+.scan-line {
+  animation: scan-line 2s linear infinite;
+}
+
+.landmark-dot {
+  animation: landmark-pulse 1.5s ease-in-out infinite;
+}
